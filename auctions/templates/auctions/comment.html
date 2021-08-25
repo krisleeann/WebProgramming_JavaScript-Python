@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Comments</h2>
+
+    <div>
+    <!-- Display page contents and comments -->
+        <ul>
+            {% for comment in comments %}
+                <li><a href="{% url 'comments' comments %}">{{ comment }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

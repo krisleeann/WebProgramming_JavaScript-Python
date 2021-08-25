@@ -1,0 +1,20 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+    Bidding
+{% endblock %}
+
+{% block body %}
+
+    <h2>Place a Bid</h2>
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <div>
+        <p><b>Note: all new bids must be higher than the current bid below.</p></b>
+        <p>Current bid: {{ current }} </p>
+    </div>
+    
+{% endblock %}

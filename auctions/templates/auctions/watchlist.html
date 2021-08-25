@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2>Watchlist</h2>
+
+    <!-- Handle cases where watchlist is empty -->
+    <div>
+        {% if empty %}
+            <div>{{ message }}</div>
+        {% endif %}
+    </div>
+    <!-- Per spec: If watchlist exists, display the list and its details with a link to the listing -->
+    <div>
+        {% for item in watchlist %}
+            {% for i in item %}
+                <a href="{% url 'listing' i.id %}">Watchlist Item: </a>
+                <p>{{ i.title }}</p>
+                <p>{{ i.description }}</p>
+                <p>{{ i.bid }}</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    
+{% endblock %}

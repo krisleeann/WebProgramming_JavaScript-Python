@@ -1,0 +1,21 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2>The bidding has been closed.</h2>
+
+    <div>
+        {% if message %}
+            <div>{{ message }}</div>
+        {% endif %}
+    </div>
+    <div>
+        {% if winner %}
+            <div>{{ message }}</div><br>
+            <p>The final bid price was: {{ listing.price }}</p>
+            <p>Sold to: {{ listing.winner }}</p>
+            <p>Sold by: {{ listing.user }}</p>
+        {% endif %}
+    </div>
+    
+{% endblock %}
